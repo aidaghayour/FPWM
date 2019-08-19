@@ -1,0 +1,25 @@
+Package: FPWM
+Title: Forked Position Weight Matrix.
+Version: 0.0.0.9000
+Authors@R: person("Aida", "Ghayour", email = "aghayourkhia@mun.ca", role = c("aut", "cre"))
+Description: This package generates a Froked Position Weight Matrix which is helpful to have a better insight about characteristics of Transcription Factor Dimers.
+Depends: R (>= 3.5.2)
+License: What license is it under?
+Encoding: UTF-8
+LazyData: true
+Suggests: knitr, rmarkdown
+VignetteBuilder: knitr
+Imports:
+		ggplotify,
+		ggplot2,
+		gridExtra,
+		grid,
+		lattice,
+		gridGraphics,
+		base2grob,
+		ggplot2,
+		ggseqlogo,
+		stringr,
+		cowplot,
+		reader
+RoxygenNote: 6.1.1.9000
