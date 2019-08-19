@@ -10,13 +10,7 @@
 #' @export
 Barandseqlogo <- function(NumberofTop, highestscore,cell,TF,Local = FALSE,path="")
 {
-# NumberofTop =10
-# highestscore  = 10
-# cell = "k562"
-# TF = "CEBPB"
-# Local = TRUE
-# path = "co-factors.csv"
-###
+
   x_peak_id <- paste0("MM1_HSA_",cell,"_",TF)
 if (Local == TRUE){
   df<-read.csv(path)
