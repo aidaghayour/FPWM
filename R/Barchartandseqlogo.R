@@ -1,8 +1,8 @@
 #' A function for generating barchart and seq-logo of co-factors of selected TF
 #'
-#' This function generates a barchart of co-binding % for each co-factor of selected TF, along with seq-logo for each of co-factors.
-#' @param NumberofTop Number of top co-factors with higher co-binding % to be illustrated
-#' @param highestscore Co-binding % wich will be the minimum percentage of the shown co-factors.
+#' This function generates a barchart of co-binding Percentage for each co-factor of selected TF, along with seq-logo for each of co-factors.
+#' @param NumberofTop Number of top co-factors with higher co-binding Percentage to be illustrated
+#' @param highestscore Co-binding Percentage wich will be the minimum percentage of the shown co-factors.
 #' @param cell A character string, which is the name of cell under study.
 #' @param TF A character string which will be the Transcription Factor of interest.
 #' @param Local A logical value, which will read a local .CSV file in case of TRUE. The file should contain two columns: scores, columnnames which are the co-binding percentages and IDs respectively.
@@ -10,7 +10,6 @@
 #' @export
 Barandseqlogo <- function(NumberofTop, highestscore,cell,TF,Local = FALSE,path="")
 {
-
   x_peak_id <- paste0("MM1_HSA_",cell,"_",TF)
 if (Local == TRUE){
   df<-read.csv(path)
@@ -50,7 +49,7 @@ while (1){
 }
 
 if(index >= NumberofTop){
-  message("Number of co-factors with co-binding % higher than provided, is more than or equal to selected number of Co-factors to show")
+  message("Number of co-factors with co-binding Percentage higher than provided, is more than or equal to selected number of Co-factors to show")
   message(paste0("...... Showing ", NumberofTop, " top ones..."))
 }else
 {
@@ -64,7 +63,7 @@ p <-
     y = scores
   )) + ggplot2::geom_bar(stat = "identity") + ggplot2::theme(axis.text.y =
                                                                ggplot2::element_blank()) + ggplot2::theme(legend.position = "none") + ggplot2::xlab("TFregulomeR IDs of CEBPB's Co-factors") +
-  ggplot2::ylab("co-binding (%)") + ggplot2::theme(
+  ggplot2::ylab("co-binding (Percentage)") + ggplot2::theme(
     panel.grid.major = ggplot2::element_blank(),
     panel.grid.minor = ggplot2::element_blank(),
     panel.background = ggplot2::element_blank()
