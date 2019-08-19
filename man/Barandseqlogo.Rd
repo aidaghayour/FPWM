@@ -8,9 +8,9 @@ Barandseqlogo(NumberofTop, highestscore, cell, TF, Local = FALSE,
   path = "")
 }
 \arguments{
-\item{NumberofTop}{Number of top co-factors with higher co-binding % to be illustrated}
+\item{NumberofTop}{Number of top co-factors with higher co-binding Percentage to be illustrated}
 
-\item{highestscore}{Co-binding % wich will be the minimum percentage of the shown co-factors.}
+\item{highestscore}{Co-binding Percentage wich will be the minimum percentage of the shown co-factors.}
 
 \item{cell}{A character string, which is the name of cell under study.}
 
@@ -21,5 +21,5 @@ Barandseqlogo(NumberofTop, highestscore, cell, TF, Local = FALSE,
 \item{path}{The path to .CSV file in case Local=TRUE.}
 }
 \description{
-This function generates a barchart of co-binding % for each co-factor of selected TF, along with seq-logo for each of co-factors.
+This function generates a barchart of co-binding Percentage for each co-factor of selected TF, along with seq-logo for each of co-factors.
 }
