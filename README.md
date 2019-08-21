@@ -36,7 +36,7 @@ labeled with weights indicating the probability rate of following sub-sequence.
 
 #### Prerequisite packages (Will be installed automatically)
 
-1) Required packages: the packages below are the basic prerequisite packages for *TFregulomeR* functionalities
+1) Required packages: the packages below are the basic prerequisite packages for *FPWM* functionalities
 
     - [ggplot2](https://cran.r-project.org/web/packages/ggplot2/index.html) (>= 3.0.0)
     - [ggseqlogo](https://cran.r-project.org/web/packages/ggseqlogo/index.html) (>= 0.1)
