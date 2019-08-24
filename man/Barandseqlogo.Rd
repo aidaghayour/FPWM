@@ -5,7 +5,7 @@
 \title{A function for generating barchart and seq-logo of co-factors of selected TF}
 \usage{
 Barandseqlogo(NumberofTop, highestscore, cell, TF, Local = FALSE,
-  path = "")
+  path = "", Methylation = FALSE)
 }
 \arguments{
 \item{NumberofTop}{Number of top co-factors with higher co-binding Percentage to be illustrated}
@@ -19,6 +19,8 @@ Barandseqlogo(NumberofTop, highestscore, cell, TF, Local = FALSE,
 \item{Local}{A logical value, which will read a local .CSV file in case of TRUE. The file should contain two columns: scores, columnnames which are the co-binding percentages and IDs respectively.}
 
 \item{path}{The path to .CSV file in case Local=TRUE.}
+
+\item{Methylation}{Is a logic argument which indicates if user wants Methylation Score to bu plotted on top of sequence logos or not.}
 }
 \description{
 This function generates a barchart of co-binding Percentage for each co-factor of selected TF, along with seq-logo for each of co-factors.
