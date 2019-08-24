@@ -198,6 +198,6 @@ Also, the function will store a local file named "cp-factors.csv" if it Local==F
 ```{r eval=TRUE}
 
 library(stringr)
-Barandseqlogo(NumberofTop =10, highestscore  = 10,cell = "k562",TF = "CEBPB",Local = TRUE,path = "co-factors.csv")
+FPWM::Barandseqlogo(NumberofTop =10, highestscore  = 10,cell = "k562",TF = "CEBPB",Local = TRUE,path = "co-factors.csv",Methylation = TRUE)
   
 ```
