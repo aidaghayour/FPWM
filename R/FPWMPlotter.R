@@ -23,7 +23,7 @@ FPWMPlotter <- function(TheObject, Methylation = TRUE)
   W=H*1.2
   
   grid::grid.rect(
-    gp = grid::gpar(col="grey"),
+    gp = grid::gpar(col="NA"),
     name = "Parent",
     x = grid::unit(.2, "npc"),
     y = grid::unit(.5, "npc"),
@@ -39,7 +39,7 @@ FPWMPlotter <- function(TheObject, Methylation = TRUE)
   
   if (N %% 2 == 0){
     grid::grid.rect(
-      gp = grid::gpar(col="grey"),
+      gp = grid::gpar(col="NA"),
       name = paste0("c",floor(N/2)),
       x = grid::grobX("Parent", 0)+ grid::unit(W/1.3, "npc") ,
       y = grid::grobY("Parent", 0)+ grid::unit(H/1.5, "npc"),
@@ -54,7 +54,7 @@ FPWMPlotter <- function(TheObject, Methylation = TRUE)
              height = grid::unit(H, "npc")))###
     
     grid::grid.rect(
-      gp = grid::gpar(col="grey"),
+      gp = grid::gpar(col="NA"),
       name = paste0("c",(floor(N/2)+1)),
       x = grid::grobX("Parent", 0)+ grid::unit(W/1.3, "npc") ,
       y = grid::grobY("Parent", 0)- grid::unit(H/1.5, "npc"),
@@ -70,7 +70,7 @@ FPWMPlotter <- function(TheObject, Methylation = TRUE)
     if ( N != 2 ){
       for (i in c((floor(N/2)+1):(N-1))){
         grid::grid.rect(
-          gp = grid::gpar(col="grey"),
+          gp = grid::gpar(col="NA"),
           name = paste0("c",(i+1)),
           x = grid::grobX(paste0("c",i), 90) ,
           y = grid::grobY(paste0("c",i), 270)- grid::unit(H/1.5, "npc"),
@@ -87,7 +87,7 @@ FPWMPlotter <- function(TheObject, Methylation = TRUE)
       
       for (i in c(floor(N/2):2)){
         grid::grid.rect(
-          gp = grid::gpar(col="grey"),
+          gp = grid::gpar(col="NA"),
           name = paste0("c",(i-1)),
           x = grid::grobX(paste0("c",i), 90) ,
           y = grid::grobY(paste0("c",i), 90)+ grid::unit(H/1.5, "npc"),
@@ -106,7 +106,7 @@ FPWMPlotter <- function(TheObject, Methylation = TRUE)
   if (N %% 2 == 1)
   {
     grid::grid.rect(
-      gp = grid::gpar(col="grey"),
+      gp = grid::gpar(col="NA"),
       name = paste0("c",(floor(N/2)+1)),
       x = grid::grobX("Parent", 0)+ grid::unit(W/1.3, "npc") ,
       y = grid::grobY("Parent", 0),
@@ -123,7 +123,7 @@ FPWMPlotter <- function(TheObject, Methylation = TRUE)
     
     for (i in c((floor(N/2)+1):(N-1))){
       grid::grid.rect(
-        gp = grid::gpar(col="grey"),
+        gp = grid::gpar(col="NA"),
         name = paste0("c",(i+1)),
         x = grid::grobX(paste0("c",i), 90) ,
         y = grid::grobY(paste0("c",i), 270)- grid::unit(H/1.5, "npc"),
@@ -140,7 +140,7 @@ FPWMPlotter <- function(TheObject, Methylation = TRUE)
     
     for (i in c((floor(N/2)+1):2)){
       grid::grid.rect(
-        gp = grid::gpar(col="grey"),
+        gp = grid::gpar(col="NA"),
         name = paste0("c",(i-1)),
         x = grid::grobX(paste0("c",i), 90) ,
         y = grid::grobY(paste0("c",i), 90)+ grid::unit(H/1.5, "npc"),
