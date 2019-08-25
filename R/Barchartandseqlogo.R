@@ -62,13 +62,15 @@ Barandseqlogo <- function(NumberofTop, highestscore,cell,TF,Local = FALSE,path="
   toberemoved <- paste0("MM1_HSA_",cell,"_")
   Pattern <- paste0("^.*?", toberemoved)
   xlabels <- gsub(pattern = toberemoved,x=colss, replacement = "")
+  xlabels <- paste0("CEBPB + ", xlabels)
   p <-
     ggplot2::ggplot(data = df, ggplot2::aes(
       x = reorder(columnnames,scores),
       y = scores
     )) + ggplot2::geom_bar(stat = "identity")  + ggplot2::scale_x_discrete(labels= rev(as.vector(xlabels))) + ggplot2::theme(axis.text.y =
-                                                                                                                               ggplot2::element_text(color = "black", size=8, angle=0, vjust=0.5, hjust=.95) ) + ggplot2::theme(legend.position = "none") + ggplot2::xlab("TFregulomeR IDs of Co-factors") +
+                                                                                                                               ggplot2::element_text(color = "black", size=8, angle=0, vjust=0.5, hjust=.95) ) + ggplot2::theme(legend.position = "none") +
     ggplot2::ylab("co-binding (Percentage)") + ggplot2::theme(
+      axis.title.y  = ggplot2::element_blank(),
       axis.ticks.y = ggplot2::element_blank(),
       panel.grid.major = ggplot2::element_blank(),
       panel.grid.minor = ggplot2::element_blank(),
