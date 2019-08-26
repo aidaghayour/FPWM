@@ -1,29 +1,24 @@
 
 # Introduction
-This model, helps scientists to have a better understanding of background scenario of
-the sequence preference of TF of interest, and being more precise, does not suffer from present
-models drawbacks.
-In detail, we aim to build an environment of multiple sequence logos forming a graph. Paths are
-labeled with weights indicating the probability rate of following sub-sequence.
+This model, helps user to have a better understanding of background scenario in sequence preference of TF, and being more precise, does not suffer from present models' drawbacks.
+In detail, we aim to build an environment of multiple sequence logos forming a graph. Paths are labeled with weights implying the probability rate of following sub-sequence.
 
 
 ## Current functionalities
 
-1)Building object of TFregulomeR() data, suitable for plotting using ClassAssignment()
+1)Building object of TFregulomeR() data, suitable for plotting using ObjectGenerator()
 
-2)Converting PWMs to a Forked-PWM respecting a forking position, with the help of Conv2FTRANSFAC()
+2)Storing a local .txt file of the form Forked-TRANSFAC using StoreFTRANSFACFile()
 
-3)Addition of PWM matrices of class object, via AddMatrix()
+3)Constructing a class object for plotting with the help of ReadFTRANSFACFile()
 
-4)Weighted average of Methylation levels extracted from class object.
+4)Plotting a F-PWM object using FPWMPlotter()
 
-5)Converting Beta level matrcies extracted from MethMotif to proper data frames for plotting purposes, employing BetaScore_FormatModif().
+5)Storing a bulk data file with concatenating  multiple sets of FPWMs with the help of StoreMultiTRANSFACFile()
 
-6)Storing a local .txt file of the form Forked-TRANSFAC using FTRANSFAC_Store()
+6)Plotting local PDF of FPWMs by reading a bulk data file with the help of PlotMultiFTRANSFACFile()
 
-7)Constructing a class object for plotting with the help of Read_FTRANSFAC()
-
-8)Plotting a F-PWM using ObjectPlot()
+7)Graphical studying the intersection of TF peaks in cell specific enviroment regarding the intersection score using Barchartandseqlogo()
 
 ## Release notes
 #### This repository is FPWM Beta release! 
