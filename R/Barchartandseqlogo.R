@@ -13,13 +13,14 @@ Barandseqlogo <- function(NumberofTop, highestscore,cell,TF,Local = FALSE,path="
 {
   x_peak_id <- paste0("MM1_HSA_",cell,"_",TF)
   if (Local == TRUE){
+    message("\n\nYou chose to work with locally available .CSV file\n\n")
     df<-read.csv(path)
     scores <- as.numeric(df[,"scores"])
     columnnames <- as.vector(df[,"columnnames"])
     df <- data.frame(scores = scores, columnnames = columnnames)
   } else {
     
-    
+    message("\n\nYou chose to export data from TFregulomeR\n\n")
     
     k562_record <- TFregulomeR::TFBSBrowser(cell_tissue_name = cell)
     intersecmatrix_CEBPB_and_k562 <-
@@ -37,6 +38,7 @@ Barandseqlogo <- function(NumberofTop, highestscore,cell,TF,Local = FALSE,path="
     df <- data.frame(scores = scores, columnnames = columnnames)
     
     write.csv(df,'co-factors.csv')
+    message("\n\nData file named 'co-factors.csv' is stored in current working directory! \n\n")
   }##########
   
   i <- 1
