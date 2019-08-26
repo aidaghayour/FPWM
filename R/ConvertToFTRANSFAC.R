@@ -5,7 +5,9 @@
 #' @return This class receives a class Object which holds the plotting data, and updates it by adding the proper matrix of new format: FTRANSFAC.
 #' @export
 ConvertToFTRANSFAC <- function(TheObject)
-{ Cnumber = length(TheObject@matrix)
+{ 
+  message("\n\n... Matrices are converting to Forked-TRANSFAC format....\n\n")
+  Cnumber = length(TheObject@matrix)
   RowNum = nrow(TheObject@matrix[[1]])
   sp = TheObject@sp
   R = rep(c((sp + 1):RowNum), times = Cnumber)
@@ -21,4 +23,5 @@ ConvertToFTRANSFAC <- function(TheObject)
   }
   TheObject@forked <- DF
   return(TheObject)
+message("\n\n...FPWM is stored at @forked slot of the object ....\n\n")
 }
