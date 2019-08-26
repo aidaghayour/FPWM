@@ -22,6 +22,7 @@ ConvertToFTRANSFAC <- function(TheObject)
     c <- c+1
   }
   TheObject@forked <- DF
+  message("\n\n...FPWM is stored at @forked slot of the object ....\n\n")
   return(TheObject)
-message("\n\n...FPWM is stored at @forked slot of the object ....\n\n")
+
 }
