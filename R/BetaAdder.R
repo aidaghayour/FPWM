@@ -9,6 +9,7 @@
 #' @export
 BetaAdder <- function( TheObject, sp)
 {
+  message("\n\nMethylation Score Matrices are adding up....\n\n")
   X <-  Map('*',TheObject@betalevel,TheObject@score)
   S <- X[[1]][,1:sp]
   W <- TheObject@score[[1]]
@@ -19,4 +20,5 @@ for ( i in c(2:length(TheObject@id))){
   TheObject@parentbeta <- as.matrix(round(S/W))
   
   return(TheObject)
+  message("\n\n....Methylation Score Matrices are added and assigned as parent node's matrix....\n\n")
 }
