@@ -18,7 +18,6 @@ for ( i in c(2:length(TheObject@id))){
       W <- TheObject@score[[i]] + W
       }
   TheObject@parentbeta <- as.matrix(round(S/W))
-  
+   message("\n\n....Methylation Score Matrices are added and assigned as parent node's matrix....\n\n")
   return(TheObject)
-  message("\n\n....Methylation Score Matrices are added and assigned as parent node's matrix....\n\n")
 }
