@@ -18,8 +18,8 @@ for (i in EndLines)
   close(fileConn)
   
   pdf(paste0("starting from line ", skip , ".pdf"))
-  X <- ReadFTRANSFACFile(File = file_name, Methylation = FALSE)
-  FPWMPlotter(X, Methylation = FALSE)
+  X <- FPWM::ReadFTRANSFACFile(File = file_name, Methylation = FALSE)
+  FPWM::FPWMPlotter(X, Methylation = FALSE)
   dev.off()
   file.remove(file_name)
   skip = i
