@@ -17,6 +17,7 @@ ObjectGenerator <- function( sp,peak_id_y_list,peak_id_x, height=2, width=3)
   # peak_id_x = "MM1_HSA_K562_CEBPB"
   
   for (i in c(1:length(peak_id_y_list))){
+    message("\n....Accessing TFregulomeR!...." )
     assign(paste0("Motif",i),TFregulomeR::intersectPeakMatrix(peak_id_x = peak_id_x, motif_only_for_id_x = T, peak_id_y = peak_id_y_list[i]))}
   
     
@@ -32,18 +33,19 @@ ObjectGenerator <- function( sp,peak_id_y_list,peak_id_x, height=2, width=3)
       }
     
     
-
-  MultiClass <- new("FPWMClassObj")
   
+  MultiClass <- new("FPWMClassObj")
+  message("\n....Assigning data to class slots!...." )
   MultiClass <- updateFPWMClassObj(MultiClass, id = peak_id_y_list,
                                  matrix=TFregulomeDatamatrixlist,
                                  betalevel = TFregulomeDataBetalist,
                                  score= TFregulomeDataovlaplist,
                                  sp = sp)
-  
+  message("\n....Adding up PWMs!...." )
   MultiClass <- MatrixAdder( MultiClass, sp)
+  message("\n....Adding up Methylation Score matrices!...." )
   MultiClass <- BetaAdder(MultiClass, sp)
-
+  message("\n....Merging matrices and converting them to Forked-TRANSFAC format!...." )
   MultiClass <- ConvertToFTRANSFAC(MultiClass)
   
   for (i in c(1:length(MultiClass@betalevel))) {
@@ -51,7 +53,8 @@ ObjectGenerator <- function( sp,peak_id_y_list,peak_id_x, height=2, width=3)
     MultiClass@betalevel[[i]] <- X[,(sp+1):ncol(MultiClass@betalevel[[i]])]
   }
   MultiClass@xid <- peak_id_x
+  message("\n....Methylation Score matrices are modified!...." )
   MultiClass <- ModifyBetaFormat(MultiClass)
-  
+  message("\n....Returning class object!...." )
 return(MultiClass)
 }
