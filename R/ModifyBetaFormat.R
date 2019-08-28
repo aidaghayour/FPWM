@@ -35,7 +35,7 @@ ModifyBetaFormat <- function(TheObject)
   M1[(((ncol(BS1) - 1) * 2) + 1):((ncol(BS1) - 1) * 3), 3] <- pos1
 
   TheObject@parentbeta <- M1
-
+  message("\n....Parent node's Methylation Score Matrix is modified to right format!...." )
   #####################################
   
   for (i in c(1:length(TheObject@betalevel))) {
@@ -70,7 +70,7 @@ ModifyBetaFormat <- function(TheObject)
     M2[(((ncol(BS2) - 1) * 2) + 1):((ncol(BS2) - 1) * 3), 3] <- pos2
     
     TheObject@betalevel[[i]] <- M2}
-  
+  message("\n....Leaf nodes' Methylation Score Matrix is modified to right format!...." )
   
   return(TheObject)
 }
