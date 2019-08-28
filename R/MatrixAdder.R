@@ -12,6 +12,6 @@ MatrixAdder <- function( TheObject, sp)
   for ( i in c(2:length(TheObject@matrix))){
   S <- TheObject@matrix[[i]][1:sp,]+S}
   TheObject@parentmatrix <- S
-  
+  message("\n....PWMs are summed up and assigned as parent matrix!...." )
   return(TheObject)
 }
