@@ -11,7 +11,7 @@
 #' @export
 Barandseqlogo <- function(NumberofTop, highestscore,cell,TF,Local = FALSE,path="",Methylation = FALSE)
 {
-  if( local==TRUE & path=="" ) stop('You chose to work locally, but never provided path of local file!')
+  if( Local==TRUE & path=="" ) stop('You chose to work locally, but never provided path of local file!')
   x_peak_id <- paste0("MM1_HSA_",cell,"_",TF)
   if (Local == TRUE){
     message("\n\nYou chose to work with locally available .CSV file\n\n")
