@@ -1,20 +1,29 @@
 ---
-title: "Representing Dimer Transcription Factor Complexes using Forked-Position Weight Matrices"
-# author:
-abstract: >
-  Transcription factors (TFs) Transcription factors (TFs) are key cellular components that control gene expression. They recognize specific DNA sequences, the TF binding sites (TFBSs), and thus are targeted to specific regions of the genome where they can recruit transcriptional co-factors and/or chromatin regulators tone-tune spatiotemporal gene regulation. Therefore, the identification of TFBSs in genomic sequences and their subsequent quantitative modeling is of crucial importance for understanding and predicting gene expression. Most transcription factors do not work alone. Many large TF families form complex homotypic or heterotypic interactions through dimerization. For gene transcription to occur, a number of transcription factors must bind to DNA regulatory sequences. Because of this contribution of multiple TFs, a single sequence matrix/logo is not sufficiently expressing as it is not properly designed to illustrate the impact of other TFs engaged in transcription process. To tackle this issue, we purpose a model which consists a graph of multiple PFMs (or Seq-logos) to have a better representation of a binding site of a TF of interest, in the presence of other factors.
+title: Representing Dimer Transcription Factor Complexes using Forked-Position Weight
+  Matrices
+author:
+  - Aida Ghayour, Decipline of Genetic, Memorial University of Newfoundland
+  - Roberto Tirado-Magallanes, Cancer Science Institute of Singapore, National University of Singapore
+  - Quy Xiao Xuan Lin,  Cancer Science Institute of Singapore, National University of Singapore
+  - Touati Benoukraf, Decipline of Genetic, Memorial University of Newfoundland and Cancer Science Institute of Singapore, National University of Singapore
+  - Hamid Usefi, 3Department of Mathematics and Statistics, Faculty of Science, Memorial University of Newfound-land
 date: "`r Sys.Date()`"
 output:
   pdf_document:
     highlight: null
     number_sections: yes
+  html_document:
+    df_print: paged
+    toc: yes
   rmarkdown::html_vignette:
-    toc: true
     fig_caption: yes
-vignette: >
-  %\VignetteIndexEntry{Vignette Title}
-  %\VignetteEncoding{UTF-8}
-  %\VignetteEngine{knitr::rmarkdown}
+    toc: yes
+  word_document:
+    toc: yes
+abstract: |
+  Transcription factors (TFs) Transcription factors (TFs) are key cellular components that control gene expression. They recognize specific DNA sequences, the TF binding sites (TFBSs), and thus are targeted to specific regions of the genome where they can recruit transcriptional co-factors and/or chromatin regulators tone-tune spatiotemporal gene regulation. Therefore, the identification of TFBSs in genomic sequences and their subsequent quantitative modeling is of crucial importance for understanding and predicting gene expression. Most transcription factors do not work alone. Many large TF families form complex homotypic or heterotypic interactions through dimerization. For gene transcription to occur, a number of transcription factors must bind to DNA regulatory sequences. Because of this contribution of multiple TFs, a single sequence matrix/logo is not sufficiently expressing as it is not properly designed to illustrate the impact of other TFs engaged in transcription process. To tackle this issue, we purpose a model which is a forked PFM (or Seq-logo) to have a better representation of a binding site of a TF of interest, in the co-factor context.
+vignette: |
+  %\VignetteIndexEntry{Vignette Title} %\VignetteEncoding{UTF-8} %\VignetteEngine{knitr::rmarkdown}
 ---
 
 ```{r setup, include = FALSE}
@@ -94,7 +103,7 @@ Also, the function will store a local file named "cp-factors.csv" if it Local==F
 
 library(stringr)
 FPWM::Barandseqlogo(
-  NumberofTop = 6,
+  NumberofTop = 5,
   highestscore  = 10,
   cell = "k562",
   TF = "CEBPB",
@@ -305,4 +314,12 @@ With previous approach, the user can observe a single FPWM plot only with the he
 library(stringr)
 FPWM::PlotMultiFTRANSFACFile( File = "All.txt")
 ```
+## Connect with TFBSTools
+It is faciliated for the user to ceonvert the motif matrix to the subclass PFMatrix in TFBSTools, using ToTFBSTools().
 
+
+```{r eval=TRUE}
+library(TFBSTools)
+FPWM::ToTFBSTools(AclassObject)
+
+```
