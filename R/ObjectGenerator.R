@@ -18,7 +18,7 @@ ObjectGenerator <- function( sp,peak_id_y_list,peak_id_x, height=2, width=3)
   
   for (i in c(1:length(peak_id_y_list))){
     message("\n....Accessing TFregulomeR!...." )
-    assign(paste0("Motif",i),TFregulomeR::intersectPeakMatrix(motif_type ="TRANSFAC",peak_id_x = peak_id_x, motif_only_for_id_x = T, peak_id_y = peak_id_y_list[i]))}
+    assign(paste0("Motif",i),TFregulomeR::intersectPeakMatrix(motif_type ="TRANSFAC",peak_id_x = peak_id_x, motif_only_for_id_x = T, motif_only_for_id_y = T, peak_id_y = peak_id_y_list[i]))}
   
     
     TFregulomeDataovlaplist <- list()
