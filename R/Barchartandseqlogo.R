@@ -25,7 +25,7 @@ Barandseqlogo <- function(NumberofTop, highestscore,cell,TF,Local = FALSE,path="
     
     k562_record <- TFregulomeR::TFBSBrowser(cell_tissue_name = cell)
     intersecmatrix_CEBPB_and_k562 <-
-      TFregulomeR::intersectPeakMatrix(peak_id_x = x_peak_id, peak_id_y = k562_record$ID, motif_only_for_id_x = TRUE)
+      TFregulomeR::intersectPeakMatrix(peak_id_x = x_peak_id, peak_id_y = k562_record$ID, motif_only_for_id_x = TRUE, motif_only_for_id_y = TRUE)
     results <-
       TFregulomeR::intersectPeakMatrixResult(
         intersectPeakMatrix = intersecmatrix_CEBPB_and_k562,
