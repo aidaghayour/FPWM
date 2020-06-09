@@ -4,8 +4,15 @@
 \alias{Barandseqlogo}
 \title{A function for generating barchart and seq-logo of co-factors of selected TF}
 \usage{
-Barandseqlogo(NumberofTop, highestscore, cell, TF, Local = FALSE,
-  path = "", Methylation = FALSE)
+Barandseqlogo(
+  NumberofTop,
+  highestscore,
+  cell,
+  TF,
+  Local = FALSE,
+  path = "",
+  Methylation = FALSE
+)
 }
 \arguments{
 \item{NumberofTop}{Number of top co-factors with higher co-binding Percentage to be illustrated}

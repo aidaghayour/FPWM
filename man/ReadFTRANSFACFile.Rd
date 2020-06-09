@@ -4,8 +4,10 @@
 \alias{ReadFTRANSFACFile}
 \title{A function for generating a class object from a local file in proper format}
 \usage{
-ReadFTRANSFACFile(File = "MM1_HSA_K562_CEBPB___4-FTRANSFAC.txt",
-  Methylation = FALSE)
+ReadFTRANSFACFile(
+  File = "MM1_HSA_K562_CEBPB___4-FTRANSFAC.txt",
+  Methylation = FALSE
+)
 }
 \arguments{
 \item{File}{the directory of .txt file}
